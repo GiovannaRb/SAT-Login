@@ -1,11 +1,11 @@
 # SAT Login
 
-Este repositório contém a aplicação SAT, composta por:
+Este repositório contém uma tela de login, composta por:
 
 - *Backend.SAT*: Aplicação .NET Core( C#)
 - *Frontend.SAT*: Aplicação Angular
 
-## Como executar
+## Como executar:
 
 ### Backend
 - Gere o banco com o  comando docker abaixo
