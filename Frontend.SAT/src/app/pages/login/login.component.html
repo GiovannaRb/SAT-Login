@@ -1,0 +1,46 @@
+<div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <h1>Bem-vindo de volta</h1>
+        <p>Por favor, faça login na sua conta</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+          <label for="userName">Usuário</label>
+          <input
+            type="userName"
+            id="userName"
+            formControlName="userName"
+            placeholder="Digite o Usuário"
+            required
+          />
+          @if(form['userName'].invalid && form['userName'].touched){
+              <div  class="error-message">
+                Usuário é obrigatório e deve ser válido.
+              </div>
+          }
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="Digite sua senha"
+            required
+          />
+
+          @if(form['password'].invalid && form['password'].touched){
+              <div  class="error-message">
+                Senha é obrigatória.
+              </div>
+
+          }
+        </div>
+        <button type="submit" class="login-button" [disabled]="loginForm.invalid">Login</button>
+      </form>
+      <div class="login-footer">
+        <p>Não tem uma conta? <a routerLink="/register">Cadastre-se</a></p>
+      </div>
+    </div>
+  </div>

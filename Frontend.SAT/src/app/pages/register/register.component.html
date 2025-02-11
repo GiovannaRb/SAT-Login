@@ -1,0 +1,45 @@
+<div class="register-container">
+    <div class="register-box">
+        <div class="register-header">
+            <h1>Crie sua conta</h1>
+            <p>Preencha os campos abaixo para se registrar</p>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+            <div class="form-group">
+                <label for="userName">Usuário:</label>
+                <input type="userName" id="userName" formControlName="userName" placeholder="Digite seu usuário" required />
+                @if(registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched){
+                <div class="error-message">
+                    Usuário é obrigatório e deve ser válido.
+                </div>
+                }
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" formControlName="password" placeholder="Digite sua senha"
+                    required />
+                @if(registerForm.get('password')?.invalid && registerForm.get('password')?.touched){
+                <div class="error-message">
+                    Senha é obrigatória e deve ter pelo menos 6 caracteres.
+                </div>
+                }
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirme sua senha</label>
+                <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                    placeholder="Confirme sua senha" required />
+
+                @if(registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched)
+                {
+                <div class="error-message">
+                    As senhas não coincidem.
+                </div>
+                }
+            </div>
+            <button type="submit" class="register-button" [disabled]="registerForm.invalid">Registrar</button>
+        </form>
+        <div class="register-footer">
+            <p>Já tem uma conta? <a routerLink="/">Faça login</a></p>
+        </div>
+    </div>
+</div>
