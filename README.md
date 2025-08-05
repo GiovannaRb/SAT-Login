@@ -1,8 +1,8 @@
-# SAT Login
+# Tela de Login
 
-Este repositório contém uma tela de login, composta por:
+Este repositório contém uma tela de login para a empresa SAT, composta por:
 
-- *Backend.SAT*: Aplicação .NET Core( C#)
+- *Backend.SAT*: Aplicação .NET Core(C#)
 - *Frontend.SAT*: Aplicação Angular
 
 ## Como executar:
